@@ -89,18 +89,23 @@ def test_viber(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_viber_link()
+    time.sleep(5)
+    auth_main_page.driver.save_screenshot('viber_page.png')
 
 
 def test_telega(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_telega_link()
+    auth_main_page.driver.save_screenshot('telega_page.png')
 
 
 def test_support_phone(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_support_phone_link()
+    time.sleep(5)
+    auth_main_page.driver.save_screenshot('Support_phone.png')
 
 def test_registration(browser):
     auth_main_page = AuthHelper(browser)
@@ -112,26 +117,31 @@ def test_vk(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_vk_link()
+    auth_main_page.driver.save_screenshot('VK_page.png')
 
 def test_ok(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_ok_link()
+    auth_main_page.driver.save_screenshot('OK_page.png')
 
 def test_mail(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_mail_link()
+    auth_main_page.driver.save_screenshot('Mail_page.png')
 
 def test_google(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_google_link()
+    auth_main_page.driver.save_screenshot('Google_page.png')
 
 def test_ya(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_ya_link()
+    auth_main_page.driver.save_screenshot('Ya_page.png')
 
 def test_cookie(browser):
     auth_main_page = AuthHelper(browser)
