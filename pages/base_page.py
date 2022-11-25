@@ -9,9 +9,10 @@ class BasePage:
         self.base_url = "https://b2c.passport.rt.ru"
 
 
+
+
     def go_to_site(self):
         return self.driver.get(self.base_url)
-
 
     def find_element(self, locator, time=10):
         return WebDriverWait(self.driver, time).until(EC.presence_of_element_located(locator), message=f"not find{locator}")
@@ -34,5 +35,5 @@ class BasePage:
             return False
 
     def switch_new(self):
-        self.driver.switch_to.window(self.driver.window_handles[1])
+        return self.driver.switch_to.window(self.driver.window_handles[1])
 
