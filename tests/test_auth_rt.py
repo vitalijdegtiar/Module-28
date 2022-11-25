@@ -89,7 +89,7 @@ def test_viber(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_viber_link()
-    time.sleep(5)
+    auth_main_page.switch_new()
     auth_main_page.driver.save_screenshot('viber_page.png')
 
 
@@ -97,6 +97,7 @@ def test_telega(browser):
     auth_main_page = AuthHelper(browser)
     auth_main_page.go_to_site()
     auth_main_page.click_on_telega_link()
+    auth_main_page.switch_new()
     auth_main_page.driver.save_screenshot('telega_page.png')
 
 
