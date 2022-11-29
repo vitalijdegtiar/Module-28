@@ -9,3 +9,5 @@ positive_phone = "79215988544"
 
 negative_email = "222madcat78@yandex.ru"
 negative_phone = "75858658565"
+negative_login = "NOBODY"
+negative_ls = "123456789102"
