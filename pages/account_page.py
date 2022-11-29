@@ -11,7 +11,10 @@ class Locators:
 
 class AccountHelper(BasePage):
     def logout(self):
-        return self.find_element(Locators.ACCOUNT_LOGOUT_BUTTON).click
+        return self.find_element(Locators.ACCOUNT_LOGOUT_BUTTON).click()
 
     def lk_is_visible(self):
         return self.is_visible(Locators.ACCOUNT_LK_BUTTON)
+
+    def lk(self):
+        return self.find_element(Locators.ACCOUNT_LK_BUTTON).click()

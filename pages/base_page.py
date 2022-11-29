@@ -1,6 +1,8 @@
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
 
 
 class BasePage:
@@ -34,6 +36,21 @@ class BasePage:
 
             return False
 
+    def switch_to_iframe(self, iframe):
+        """ Switch to iframe by it's name. """
+
+        self.driver.switch_to.frame(iframe)
+
     def switch_new(self):
         return self.driver.switch_to.window(self.driver.window_handles[1])
+
+    def escape(self):
+        return webdriver.ActionChains(self.driver).send_keys(Keys.ESCAPE).perform()
+
+    def switch_to_first_window(self):
+        return self.driver.switch_to.window(self.driver.window_handles[0])
+
+    def close_current_window(self):
+        self.driver.close()
+        return self.driver.switch_to.window(self.driver.window_handles[0])
 

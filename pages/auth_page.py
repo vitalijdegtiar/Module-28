@@ -34,6 +34,7 @@ class Locators:
     AUTH_REG = (By.XPATH, "//*[text()[contains(., 'Регистрация')]]")
     AUTH_LINK_CHAT = (By.XPATH,  "//*[text()[contains(., 'Чат')]]")
     AUTH_CHAT_BTN = (By.ID, 'widget_sendPrechat')
+    AUTH_CLOSE_CHAT_BTN = (By.ID, 'widget_closeChat')
     AUTH_LINK_COOKIE = (By.XPATH, "//*[text()[contains(., 'Cookies')]]")
     AUTH_COOKIE = (By.XPATH, "//*[text()[contains(., 'Cookie')]]")
     AUTH_LINK_CP = (By.XPATH, "//*[text()[contains(., 'Политикой конфиденциальности')]]")
@@ -43,6 +44,8 @@ class Locators:
     AUTH_LINK_TELEGA = (By.XPATH, '//*[@id="widget_bar"]/div[3]/a[2]')
     AUTH_CHECKBOX = (By.XPATH, "//*[text()[contains(., 'Запомнить меня')]]")
     AUTH_ERROR_LOGIN_FORM = (By.XPATH, '//*[@id="form-error-message"]')
+
+
 
 
 class AuthHelper(BasePage):
@@ -113,6 +116,13 @@ class AuthHelper(BasePage):
     def click_on_chat_link(self):
         return self.find_element(Locators.AUTH_LINK_CHAT, time=15).click()
 
+    def click_on_chat_btn(self):
+        return self.find_element(Locators.AUTH_CHAT_BTN, time=15).click()
+
+    def click_on_close_chat_btn(self):
+        # self.switch_to_iframe()
+        return self.find_element(Locators.AUTH_CLOSE_CHAT_BTN, time=15).is_displayed()
+
     def click_on_viber_link(self):
         self.move_to_element(Locators.AUTH_LINK_CHAT)
         return self.find_element(Locators.AUTH_LINK_VIBER, time=10).click()
@@ -156,6 +166,8 @@ class AuthHelper(BasePage):
 
     def reg_is_visible(self):
         return self.is_visible(Locators.AUTH_REG)
+
+
 
 
 
